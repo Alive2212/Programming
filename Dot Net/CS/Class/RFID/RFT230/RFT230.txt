@@ -1,0 +1,17 @@
+#Using RFT230 V14
+
+first copy dll into 
+program address \bin\Debug
+
+second	drag all file RFID & RFT file into wisual studio
+
+Third	use 
+            RFT230.Base.RFT230_INIT();
+	in "Form_load"
+
+fourth then used
+	RFT230.Base.rft230_GetID()
+	as function that output string
+
+		
+ 
