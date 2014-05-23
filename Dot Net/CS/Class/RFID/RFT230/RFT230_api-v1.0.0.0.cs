@@ -7,7 +7,7 @@ using System.Runtime.InteropServices;
 namespace RFT230
 {
     class API
-    {
+    {        
         [DllImport("MF_API.dll")]
         public static extern short MF_GetDLL_Ver(ref Byte rVER);
         [DllImport("MF_API.dll")]
