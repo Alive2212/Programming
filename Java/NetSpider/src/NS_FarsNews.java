@@ -12,52 +12,19 @@ import java.util.*;
 public class NS_FarsNews extends javasandbox.NetSpider {
 
     public static String NewsPrefixAddress="http://farsnews.com/newstext.php?nn=";
+    public static String NewsExtensionAddress="";
 
     public static String NewsCodesDelims = "newstext\\.php\\?nn=";
 
     public static String NewsCenterCodesDelims = "<div class=\"centercolumn\">";
     public static String NewsLeftCodesDelims = "<div class=\"leftcolumn\">";
 
+    //__________ Address of Pages that has title of all news
     public static String FirstPageAddress = "http://farsnews.com/";
-    public static String TotalAddress = "http://farsnews.com/newsv.php?title=1";
-    public static String TopNewsAddress = "http://farsnews.com/topnews.php";
+    public static String TotalNewsPageAddress = "http://farsnews.com/newsv.php?title=1";
+    public static String TopNewsPageAddress = "http://farsnews.com/topnews.php";
+    public static String SportNewsPageAddress = "http://farsnews.com/newsv.php?srv=4&title=1";
 
-
-    public static List<Long> getFirstPageLinksCodes() throws IOException {
-        List<Long> LinksCodes = new ArrayList();
-        String[] tokensTemp = getUrlSource(FirstPageAddress).split(NewsCodesDelims);
-        for (int i = 1; i < tokensTemp.length; i++){
-            if(((tokensTemp[i].length()>14))&& (tokensTemp[i].substring(0, 14).equals(tokensTemp[i-1].substring(0, 14)))){
-                //System.out.println(tokensTemp[i].substring(0, 14));
-                LinksCodes.add(Long.parseLong( tokensTemp[i].substring(0, 14)));
-            }
-        }
-        return  LinksCodes;
-    }
-
-    public static List<Long> getTotalLinksCodes() throws IOException {
-        List<Long> LinksCodes = new ArrayList();
-        String[] tokensTemp = getUrlSource(TotalAddress).split(NewsCodesDelims);
-        for (int i = 1; i < tokensTemp.length; i++){
-            if(((tokensTemp[i].length()>14)) && (tokensTemp[i].substring(0, 14).equals(tokensTemp[i-1].substring(0, 14)))){
-                //System.out.println(tokensTemp[i].substring(0, 14));
-                LinksCodes.add(Long.parseLong( tokensTemp[i].substring(0, 14)));
-
-            }
-        }
-        return  LinksCodes;
-    }
-
-    public static List<Long> getTopNewsLinksCodes() throws IOException {
-        List<Long> LinksCodes = new ArrayList();
-        String[] tokensTemp = getUrlSource(TopNewsAddress).split(NewsCodesDelims);
-        for (int i = 1; i < tokensTemp.length; i++){
-            if(((tokensTemp[i].length()>14)) && (tokensTemp[i].substring(0, 14).equals(tokensTemp[i-1].substring(0, 14)))){
-                LinksCodes.add(Long.parseLong( tokensTemp[i].substring(0, 14)));
-            }
-        }
-        return  LinksCodes;
-    }
 
     public static List<Long> getCenterNewsLinksCodes(String PageAddress) throws IOException {
         List<Long> LinksCodes = new ArrayList();

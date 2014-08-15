@@ -13,15 +13,15 @@ import java.util.List;
 
 public class Main {
     public static FolderAndFile FFObject = new FolderAndFile();
-    public static NS_FarsNews iSpider = new NS_FarsNews();
+    public static NS_tNews iSpider = new NS_tNews();
 
     public static void main(String args[]) throws IOException{
-        String text = iSpider.getUrlSource("http://farsnews.com/newsv.php?srv=4&title=1");
+        //String text = iSpider.getUrlSource("www.google.com");
 
         //List<Long> LinksCodes = iSpider.getFirstPageLinksCodes();
         //List<Long> LinksCodes = iSpider.getTotalLinksCodes();
-        List<Long> LinksCodes = iSpider.getCenterNewsLinksCodes(iSpider.TotalAddress);
+        List<String> LinksCodes = iSpider.getNewsLinksCodes(iSpider.SportNewsPageAddress);
 
-        FFObject.WriteToTextFile("d://Test.txt",text);
+        //FFObject.WriteToTextFile("d://Test.txt",text);
     }
 }
