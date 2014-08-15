@@ -17,12 +17,7 @@ namespace RFT230
             RFT230.API.MF_InitComm("USB", 9600);
         }
 
-        public static void RFT230_Buzzer(short BeepTime)
-        {
-            RFT230.API.MF_ControlBuzzer(0,BeepTime);
-        }
-
-        public static bool RFT230_IsConnect()
+        public static bool IsRFT230Connect()
         {
             bool Temp = true;
             if (RFT230.API.MF_Anticoll(0, ref RFID.Mifare.cardSN[0]) == 33)
@@ -31,12 +26,12 @@ namespace RFT230
             }
             return Temp;
         }
-        public static string RFT230_GetID()
+        public static string rft230_GetID()
         {
             string Temp = "";
             string x = "N/A";
 
-            if (RFT230_IsConnect())
+            if (IsRFT230Connect())
             {
                 x = "";
                 int a = RFT230.API.MF_Anticoll(0, ref RFID.Mifare.cardSN[0]);
