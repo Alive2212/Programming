@@ -20,8 +20,11 @@ public class NS_tNews extends javasandbox.NetSpider {
     public static String NewsCenterCodesDelims = "<div class=\"centercolumn\">";
     public static String NewsLeftCodesDelims = "<div class=\"leftcolumn\">";
 
-    //__________ Address of Pages that has title of all news
+    ///__________ Address of Pages that has title of all Sport news
+    public static String FirstNewsPageAddress = "http://tnews.ir/";
+    ///__________ Address of Pages that has title of all Sport news
     public static String SportNewsPageAddress = "http://tnews.ir/Groups/%D9%88%D8%B1%D8%B2%D8%B4%DB%8C/1";
+
 
     public static List<String> getNewsLinksCodes(String PageAddress) throws IOException {
         List<String> LinksCodes = new ArrayList();
