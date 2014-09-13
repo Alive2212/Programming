@@ -13,7 +13,8 @@ import java.util.List;
 
 public class Main {
     public static FolderAndFile FFObject = new FolderAndFile();
-    public static NS_MashreghNews iSpider = new NS_MashreghNews();
+
+    public static NS_JahanNews iSpider = new NS_JahanNews();
 
     public static void main(String args[]) throws IOException{
         System.setProperty("proxySet", "true");

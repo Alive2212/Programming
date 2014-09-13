@@ -25,7 +25,7 @@ public class NS_tNews extends javasandbox.NetSpider {
     ///__________ Address of Pages that has title of all Sport news
     public static String SportNewsPageAddress = "http://tnews.ir/Groups/%D9%88%D8%B1%D8%B2%D8%B4%DB%8C/1";
 
-
+    /*
     public static List<String> getNewsLinksCodes(String PageAddress) throws IOException {
         List<String> LinksCodes = new ArrayList();
         String[] TokensTemp = getUrlSource(PageAddress).split(NewsCodesDelims);// Get Center News Codes to End
@@ -35,6 +35,6 @@ public class NS_tNews extends javasandbox.NetSpider {
         }
         return  LinksCodes;
     }
-
+     */
 }
 
