@@ -7,24 +7,31 @@
  */
 package javasandbox;
 
+
+import com.sun.xml.internal.fastinfoset.util.StringArray;
 import org.jsoup.Jsoup;
 import org.jsoup.nodes.Document;
-
 import javax.swing.*;
 import java.io.BufferedReader;
 import java.io.IOException;
-import java.io.InputStreamReader;
 import java.net.HttpURLConnection;
 import java.net.MalformedURLException;
 import java.net.URL;
 import java.util.ArrayList;
+import java.util.*;
+import java.io.*;
 import java.util.List;
 
+import com.thoughtworks.xstream.XStream;
 
 public class NetSpider {
 
+    XStream xStream = new XStream();
+
     ///Define Default "sURL" Value
     public String sURL=new String();
+
+    public HashMap WebSiteValue = new HashMap();
 
 
     //Define value of Prefix and postfix of news addresses
@@ -42,6 +49,7 @@ public class NetSpider {
     public int CodeStartIndex = 0;
     public int CodeLengthIndex = 0;
 
+    //XStream MagicAPI = new XStream();
 
     public static String getUrlSource(String url) throws IOException {
 
@@ -71,6 +79,30 @@ public class NetSpider {
             LinksCodes.add(TokensTemp3[i].substring(CodeStartIndex, CodeStartIndex+CodeLengthIndex));
         }
         return  LinksCodes;
+    }
+
+    public HashMap getNewsText(HashMap NewsPageValue) throws IOException {
+
+//        Input List details
+//        Web Address,
+//        Type of news begin code,Type of news end code
+//        HeadTitle of news begin code,HeadTitle of news end code
+//        Title of news begin code,Title of news end code
+//        SubTitle of news begin code,SubTitle of news end code
+//        Lead of news begin code,Lead of news end code
+//        Summary of news begin code,Summary of news end code
+//        SoTitle of news begin code,SoTitle of news end code
+//        Content of news begin code,Content of news end code
+//        Source of news begin code,Source of news end code
+//        Stick of news begin code,Stick of news end code
+//        RelatedLink of news begin code,RelatedLink of news end code
+
+        HashMap NewsPageDataMap = new HashMap();
+        NewsPageDataMap.put("Content", "123");
+        System.out.println("123");
+        //MagicAPI.toXML(NewsPageDataMap);
+        return  NewsPageDataMap;
+
     }
 
 }

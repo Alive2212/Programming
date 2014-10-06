@@ -19,6 +19,10 @@ public class NS_MashreghNews extends javasandbox.NetSpider {
     public String FirstNewsPageAddress = "http://www.mashreghnews.ir/";
 
     public NS_MashreghNews (){
+        //Set PageNews values
+        //this.NewsPageValue.add("http://www.mashreghnews.ir/fa/news/350954");
+        //this.NewsPageValue.add("http://www.mashreghnews.ir/fa/news/350954");
+
         //Set value of Prefix and postfix of news addresses
         this.NewsPrefixAddress="http://www.mashreghnews.ir/fa/news/";
         this.NewsPostfixAddress="";

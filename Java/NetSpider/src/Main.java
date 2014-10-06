@@ -9,6 +9,7 @@
 import org.jsoup.Jsoup;
 import org.jsoup.nodes.Document;
 import java.io.*;
+import java.util.HashMap;
 import java.util.List;
 
 public class Main {
@@ -17,15 +18,17 @@ public class Main {
     public static NS_JahanNews iSpider = new NS_JahanNews();
 
     public static void main(String args[]) throws IOException{
-        System.setProperty("proxySet", "true");
-        System.setProperty("http.proxyHost", "proxy.atlas.iri");
-        System.setProperty("http.proxyPort", "8080");
+        //System.setProperty("proxySet", "true");
+        //System.setProperty("http.proxyHost", "proxy.atlas.iri");
+        //System.setProperty("http.proxyPort", "8080");
 
         //String text = iSpider.getUrlSource("www.google.com");
 
         //List<Long> LinksCodes = iSpider.getFirstPageLinksCodes();
         //List<Long> LinksCodes = iSpider.getTotalLinksCodes();
         List<String> LinksCodes = iSpider.getNewsLinksCodes(iSpider.FirstNewsPageAddress);
+        HashMap Temp = new HashMap();
+        iSpider.getNewsText(Temp);
 
         //FFObject.WriteToTextFile("d://Test.txt",text);
     }
