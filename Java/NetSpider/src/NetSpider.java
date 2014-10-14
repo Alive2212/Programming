@@ -5,28 +5,18 @@
  * Time: 19:40
  * To change this template use File | Settings | File Templates.
  */
+
 package javasandbox;
 
-
-import com.sun.xml.internal.fastinfoset.util.StringArray;
 import org.jsoup.Jsoup;
 import org.jsoup.nodes.Document;
-import javax.swing.*;
-import java.io.BufferedReader;
 import java.io.IOException;
-import java.net.HttpURLConnection;
-import java.net.MalformedURLException;
-import java.net.URL;
 import java.util.ArrayList;
 import java.util.*;
-import java.io.*;
 import java.util.List;
-
-import com.thoughtworks.xstream.XStream;
 
 public class NetSpider {
 
-    XStream xStream = new XStream();
 
     ///Define Default "sURL" Value
     public String sURL=new String();
@@ -51,7 +41,7 @@ public class NetSpider {
 
     //XStream MagicAPI = new XStream();
 
-    public static String getUrlSource(String url) throws IOException {
+    public String getUrlSource(String url) throws IOException {
 
         Document doc = Jsoup.connect(url)
                 .userAgent("Mozilla/5.0 (Windows NT 6.1; WOW64; rv:5.0) Gecko/20100101 Firefox/5.0")
@@ -100,9 +90,23 @@ public class NetSpider {
         HashMap NewsPageDataMap = new HashMap();
         NewsPageDataMap.put("Content", "123");
         System.out.println("123");
+
         //MagicAPI.toXML(NewsPageDataMap);
         return  NewsPageDataMap;
 
     }
+
+    public HashMap MapSpider(HashMap KeyMap,HashMap ValueMap) throws IOException {
+
+        HashMap OutputMap = new HashMap();
+        String TempHTML =new String(this.getUrlSource((String) ValueMap.get("Address")));
+        int i;
+        for (i=0;i< KeyMap.size();i++){
+            //:)
+        }
+        return  OutputMap;
+
+    }
+
 
 }
